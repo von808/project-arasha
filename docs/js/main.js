@@ -1,0 +1,1 @@
+import{burger}from"./modules/_burger.js";import{swipers}from"./modules/_swiper.js";document.addEventListener("DOMContentLoaded",()=>{if(burger(),swipers(),document.querySelector(".language")){let e=document.querySelector(".language__btn");e.onclick=function(){e.classList.toggle("language-active")}}});

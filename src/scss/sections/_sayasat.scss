@@ -1,0 +1,92 @@
+@use './../mixins' as *;
+
+.sayasat {
+  & + * {
+    margin-top: -20px;
+  }
+  &__inner {
+  }
+  &-swiper--wrapper {
+    width: calc(100% + 20px);
+    padding: 20px 0;
+    margin-top: -20px;
+    margin-left: -10px;
+    overflow: hidden;
+    @include lg {
+      width: calc(100% + 30px);
+      margin-left: -15px;
+    }
+  }
+  &-swiper {
+    --swiper-wrapper-transition-timing-function: linear;
+    width: calc(100% - 20px);
+
+    overflow: visible;
+    @include lg {
+      --swiper-wrapper-transition-timing-function: ease;
+      width: calc(100% - 30px);
+    }
+    .swiper-slide {
+      width: fit-content;
+    }
+  }
+  &__item {
+    max-width: 200px;
+    width: 100%;
+    height: 270px;
+    padding: 20px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    position: relative;
+
+    transition: transform 0.2s linear;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 100%);
+    }
+    &:hover {
+      transform: scale(1.1);
+      @include md {
+        transform: scale(1);
+      }
+    }
+  }
+  &__item-title {
+    position: relative;
+    z-index: 1;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    color: #fff;
+
+    display: -webkit-box; /* Добавьте это свойство */
+    -webkit-line-clamp: 3; /* Ограничение до двух строк */
+    -webkit-box-orient: vertical; /* Для многострочного текста */
+    overflow: hidden; /* Скрывает текст за пределами блока */
+    text-overflow: ellipsis; /* Добавляет многоточие */
+  }
+  &__item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}

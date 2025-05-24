@@ -1,0 +1,48 @@
+@use './../mixins' as *;
+
+.icon {
+  fill: transparent;
+  stroke: transparent;
+  width: 24px;
+  height: 24px;
+  &--x {
+    width: 18px;
+    height: 18px;
+    fill: var(--accent);
+  }
+  &--tt {
+    width: 18px;
+    height: 20px;
+    fill: var(--accent);
+  }
+  &--fb {
+    width: 10px;
+    height: 19px;
+    fill: var(--accent);
+  }
+  &--inst {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent);
+  }
+  &--tm {
+    width: 17px;
+    height: 14px;
+    fill: var(--accent);
+  }
+  &--search {
+    width: 24px;
+    height: 24px;
+    fill: var(--white);
+  }
+  &--burger {
+    width: 25px;
+    height: 15px;
+    fill: var(--white);
+  }
+  &--close {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+  }
+}

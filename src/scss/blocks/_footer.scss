@@ -1,0 +1,176 @@
+@use './../mixins' as *;
+
+.footer {
+  --footer-bg: #000;
+
+  padding: 50px 0;
+
+  background-color: var(--footer-bg);
+  @include md {
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 0.7fr;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__info {
+    grid-column: 2/3;
+    grid-row: 1/3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #858585;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
+    a {
+      color: #fff;
+      white-space: nowrap;
+    }
+  }
+  &__links {
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    margin-left: auto;
+    margin-bottom: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      margin: 0;
+      justify-content: flex-start;
+    }
+  }
+  &__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: right;
+    color: #fff;
+
+    white-space: nowrap;
+  }
+  .logo {
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    width: fit-content;
+    height: 60px;
+    margin: 0;
+    margin-right: auto;
+    margin-bottom: auto;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .socials {
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    margin-right: auto;
+    margin-top: auto;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 4/5;
+      margin: 0;
+      margin-right: auto;
+    }
+
+    &__link {
+      background-color: #333;
+      border-color: #333;
+    }
+    .icon {
+      fill: #fff;
+    }
+  }
+  .stat {
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+    width: 81px;
+    height: 28px;
+    margin-left: auto;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 6/7;
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .studio {
+    grid-column: 3/4;
+    grid-row: 3/4;
+
+    margin-top: auto;
+    margin-left: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9px;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 5/6;
+      margin: 0;
+      justify-content: flex-start;
+    }
+    img {
+      width: 32px;
+      height: 31px;
+    }
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: #8ad1b9;
+    }
+  }
+  .copyright {
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    width: fit-content;
+    margin-top: auto;
+    margin-right: auto;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #858585;
+    @include md {
+      grid-column: 1/-1;
+      grid-row: 7/8;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use './../mixins' as *;
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    width: fit-content;
+    height: 100%;
+    padding: 10px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+
+    white-space: nowrap;
+  }
+
+  &__link--color {
+    background-color: var(--accent);
+  }
+}

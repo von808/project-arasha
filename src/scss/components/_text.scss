@@ -1,0 +1,22 @@
+@use './../mixins' as *;
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  color: #000;
+  &-box {
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .accent {
+    color: var(--accent);
+  }
+}

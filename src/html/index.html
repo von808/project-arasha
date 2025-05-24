@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kz">
+  @@include('blocks/head.html', {"title": "Main Page"})
+  <body>
+    @@include('blocks/sprite.html')
+    <div class="wrapper">
+      @@include('./blocks/header.html')
+      <main class="main">
+        <section class="hero">
+          <div class="container">
+            <div class="hero__inner">
+              
+            </div>
+          </div>
+        </section>
+        <section class="sayasat">
+          <div class="container">
+            <div class="sayasat__inner">
+              <div class="title-box">
+                <h2 class="title">Саясат<span class="accent">.</span></h2>
+              </div>
+              <div class="sayasat-swiper--wrapper">
+                <div class="sayasat-swiper swiper">
+                  <div class="swiper-wrapper">@@loop('./elements/_sayasat-item.html', './data/_sayasat.json')</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('blocks/footer.html')
+    </div>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="./../js/main.js"></script>
+  </body>
+</html>

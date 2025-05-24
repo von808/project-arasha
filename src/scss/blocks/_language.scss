@@ -1,0 +1,41 @@
+@use './../mixins' as *;
+.language {
+  width: fit-content;
+  @include md {
+    margin-left: auto;
+  }
+  &__btn {
+    width: 100px;
+    height: 40px;
+    padding: 13px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+
+    background: #e4e4e4;
+    border: 1px solid #ebebeb;
+    border-radius: 20px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #858585;
+
+    span:nth-child(2) {
+      color: #e41f24;
+    }
+
+    &.language-active {
+      span:nth-child(2) {
+        color: #858585;
+      }
+      span:nth-child(1) {
+        color: #e41f24;
+      }
+    }
+  }
+}

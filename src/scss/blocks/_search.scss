@@ -1,0 +1,24 @@
+@use './../mixins' as *;
+
+.search {
+  max-width: 220px;
+  height: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__btn {
+  }
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: #fff;
+    &::placeholder {
+      color: inherit;
+    }
+  }
+}
