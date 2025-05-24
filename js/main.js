@@ -1,14 +1,1 @@
-import { burger } from './modules/_burger.js';
-import { swipers } from './modules/_swiper.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-  burger();
-  swipers();
-  if (document.querySelector('.language')) {
-    const langBtn = document.querySelector('.language__btn');
-
-    langBtn.onclick = function () {
-      langBtn.classList.toggle('language-active');
-    };
-  }
-});
+document.addEventListener("DOMContentLoaded",()=>{if(document.querySelector(".burger-btn")){var t=document.querySelector(".burger-btn"),r=document.querySelector(".burger-menu__close"),n=document.querySelector(".burger-overlay"),o=document.querySelectorAll(".burger-menu__header , .burger-menu__content");let e=document.querySelector(".burger-menu");document.querySelector(".burger-icon");function a(){e.classList.toggle("burger-menu--open"),document.body.classList.toggle("no-scroll")}t.addEventListener("click",()=>{a()}),r.addEventListener("click",()=>{a()}),o.forEach(e=>{e.addEventListener("click",e=>{e.stopPropagation})}),n.addEventListener("click",e=>{(e.target.classList.contains("burger-overlay")||e.target.classList.contains("burger-menu"))&&a()})}if(document.querySelector(".sayasat-swiper")){let e=new Swiper(".sayasat-swiper",{a11y:!1,slidesPerView:"auto",spaceBetween:10,loop:!0,speed:300,breakpoints:{768:{spaceBetween:20},991:{spaceBetween:20,autoplay:{delay:0},speed:2e3}}});t=document.querySelector(".sayasat-swiper");t.addEventListener("mouseenter",()=>{e.autoplay.stop()}),t.addEventListener("mouseleave",()=>{e.autoplay.start()})}if(document.querySelector(".language")){let e=document.querySelector(".language__btn");e.onclick=function(){e.classList.toggle("language-active")}}});
