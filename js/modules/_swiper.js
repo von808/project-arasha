@@ -1,1 +1,31 @@
-function swipers(){let e=new Swiper(".sayasat-swiper",{a11y:!1,slidesPerView:"auto",spaceBetween:10,loop:!0,speed:300,breakpoints:{768:{spaceBetween:20},991:{spaceBetween:20,autoplay:{delay:0},speed:2e3}}});var a=document.querySelector(".sayasat-swiper");a.addEventListener("mouseenter",()=>{e.autoplay.stop()}),a.addEventListener("mouseleave",()=>{e.autoplay.start()})}export{swipers};
+function swipers() {
+  const sayasatSwiper = new Swiper('.sayasat-swiper', {
+    a11y: false,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    speed: 300,
+    breakpoints: {
+      768: {
+        spaceBetween: 20,
+      },
+      991: {
+        spaceBetween: 20,
+        autoplay: {
+          delay: 0,
+        },
+        speed: 2000,
+      },
+    },
+  });
+
+  const sayasatSwiperContainer = document.querySelector('.sayasat-swiper');
+  sayasatSwiperContainer.addEventListener('mouseenter', () => {
+    sayasatSwiper.autoplay.stop();
+  });
+  sayasatSwiperContainer.addEventListener('mouseleave', () => {
+    sayasatSwiper.autoplay.start();
+  });
+}
+
+export { swipers };
