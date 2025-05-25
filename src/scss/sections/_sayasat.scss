@@ -26,6 +26,9 @@
       --swiper-wrapper-transition-timing-function: ease;
       width: calc(100% - 30px);
     }
+    .swiper-wrapper {
+      will-change: transform;
+    }
     .swiper-slide {
       width: fit-content;
     }
@@ -72,11 +75,11 @@
     line-height: 130%;
     color: #fff;
 
-    display: -webkit-box; /* Добавьте это свойство */
-    -webkit-line-clamp: 3; /* Ограничение до двух строк */
-    -webkit-box-orient: vertical; /* Для многострочного текста */
-    overflow: hidden; /* Скрывает текст за пределами блока */
-    text-overflow: ellipsis; /* Добавляет многоточие */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__item-img {
     width: 100%;

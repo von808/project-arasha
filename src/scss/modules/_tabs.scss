@@ -1,0 +1,8 @@
+@use './../mixins' as *;
+
+[js-tab-item] {
+  display: none !important;
+  &[js-tab-active] {
+    display: flex !important;
+  }
+}

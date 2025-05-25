@@ -9,7 +9,13 @@
         <section class="hero">
           <div class="container">
             <div class="hero__inner">
-              
+              <aside class="hero__sidebar">
+                <div class="sidebar-news">@@include('./blocks/_sidebar-hero.html')</div>
+              </aside>
+              <div class="hero__content">
+                <div class="hero__items">@@loop('./elements/_news-item.html', './data/_news-hero.json')</div>
+                <a class="hero__content-more" href="#!">Загрузить еще</a>
+              </div>
             </div>
           </div>
         </section>

@@ -1,0 +1,21 @@
+<div class="sidebar-news" js-tab>
+  <div class="sidebar-news__header">
+    <h3 class="sidebar-news__title">Жаңалықтар<span class="accent">.</span></h3>
+    <div class="sidebar-news__tab-btns">
+      <button class="sidebar-news__tab-btn" js-tab-btn js-tab-data="js-tab-item-1" js-tab-active>Последнее</button>
+      <button class="sidebar-news__tab-btn" js-tab-btn js-tab-data="js-tab-item-2">Интересное</button>
+    </div>
+  </div>
+  <ul class="sidebar-news__list" js-tab-item js-tab-data="js-tab-item-1" js-tab-active>
+    @@loop('./../elements/_sidebar-hero-item.html', './data/_sidebar-hero-items.json')
+  </ul>
+  <ul class="sidebar-news__list" js-tab-item js-tab-data="js-tab-item-2">
+    @@loop('./../elements/_sidebar-hero-item.html', './data/_sidebar-hero-items.json')
+  </ul>
+  <a class="sidebar-news__more" href="#!">
+    <span>Все новости</span>
+    <svg class="icon icon--angle-r">
+      <use xlink:href="#angle-r"></use>
+    </svg>
+  </a>
+</div>
