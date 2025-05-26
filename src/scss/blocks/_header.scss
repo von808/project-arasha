@@ -1,13 +1,13 @@
 @use './../mixins' as *;
 
 .header {
-  padding: 20px 0 0;
+  padding: 20px 0;
   background-color: var(--page-bg);
   color: var(--white);
   z-index: 90;
 
   @include md {
-    padding: 10px 0 0;
+    padding: 10px 0;
   }
   &__inner {
     display: grid;

@@ -1,0 +1,58 @@
+@use './../mixins' as *;
+
+.okiga {
+  .news-item {
+    min-height: unset;
+    height: auto;
+    aspect-ratio: 420/270;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      background: #000000;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 100%);
+      opacity: 0.8;
+    }
+    .news-item__image-box {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      aspect-ratio: unset;
+    }
+    .news-item__info {
+      justify-content: flex-end;
+
+      gap: 10px;
+
+      position: relative;
+      z-index: 2;
+    }
+    .news-item__title {
+      font-size: 20px;
+      color: #fff;
+      
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include esm {
+        font-size: 16px;
+      }
+    }
+    .news-item__category-wrapper {
+      display: none;
+    }
+    .news-item__date {
+      color: var(--accent);
+    }
+  }
+}

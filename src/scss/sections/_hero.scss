@@ -5,6 +5,9 @@
   margin: 0;
 
   background: #f4f4f4;
+  @include md {
+    padding: 40px 0;
+  }
   &__inner {
     display: flex;
     justify-content: flex-start;
@@ -75,15 +78,7 @@
       }
     }
     .news-item__info {
-      @include xl {
-        padding: 10px;
-      }
-      @include lg {
-        padding: 15px 20px 20px;
-      }
-      @include esm {
-        padding: 10px 10px 15px;
-      }
+
     }
   }
   .news-item:first-child {
@@ -109,10 +104,12 @@
       }
     }
     .news-item__image-box {
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
       z-index: 1;
+      aspect-ratio: unset;
       @include sm {
         position: static;
       }
@@ -123,7 +120,7 @@
       position: relative;
       z-index: 2;
       @include xl {
-        padding: 15px;
+        padding: 10px 10px 15px;
       }
       @include lg {
         padding: 15px 20px 20px;

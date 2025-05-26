@@ -19,15 +19,142 @@
             </div>
           </div>
         </section>
+        <section class="kogam">
+          <div class="container">
+            <div class="kogam__inner swiper-four-wrapper">
+              <div class="title-box">
+                <h2 class="title">Қоғам<span class="color--accent">.</span></h2>
+                <div class="swiper-btns">
+                  <button class="swiper-btn-prev">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                  <button class="swiper-btn-next">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="kogam__content">
+                <div class="swiper-four swiper">
+                  <div class="swiper-wrapper">@@loop('./elements/_news-item-swiper.html', './data/_swiper-four.json')</div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="okiga">
+          <div class="container">
+            <div class="okiga__inner swiper-three-wrapper">
+              <div class="title-box">
+                <h2 class="title">Оқиға<span class="color--accent">.</span></h2>
+                <div class="swiper-btns">
+                  <button class="swiper-btn-prev">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                  <button class="swiper-btn-next">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="okiga__content">
+                <div class="swiper-three swiper">
+                  <div class="swiper-wrapper">@@loop('./elements/_news-item-swiper.html', './data/_swiper-three.json')</div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="sayasat">
           <div class="container">
             <div class="sayasat__inner">
               <div class="title-box">
-                <h2 class="title">Саясат<span class="accent">.</span></h2>
+                <h2 class="title">Саясат<span class="color--accent">.</span></h2>
               </div>
               <div class="sayasat-swiper--wrapper">
                 <div class="sayasat-swiper swiper">
                   <div class="swiper-wrapper">@@loop('./elements/_sayasat-item.html', './data/_sayasat.json')</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="aymaktar">
+          <div class="container">
+            <div class="aymaktar__inner swiper-four-wrapper">
+              <div class="title-box">
+                <h2 class="title">Аймақтар<span class="color--accent">.</span></h2>
+                <div class="swiper-btns">
+                  <button class="swiper-btn-prev">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                  <button class="swiper-btn-next">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="aymaktar__content">
+                <div class="swiper-four swiper">
+                  <div class="swiper-wrapper">@@loop('./elements/_news-item-swiper.html', './data/_swiper-four.json')</div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="world-news">
+          <div class="container">
+            <div class="world-news__inner">
+              <div class="world-news__content world-news-swiper-wrapper">
+                <div class="title-box">
+                  <h2 class="title">Әлем және мәдениет<span class="color--accent">.</span></h2>
+                  <div class="swiper-btns">
+                    <button class="swiper-btn-prev">
+                      <svg class="icon icon--angle-r">
+                        <use xlink:href="#angle-r"></use>
+                      </svg>
+                    </button>
+                    <button class="swiper-btn-next">
+                      <svg class="icon icon--angle-r">
+                        <use xlink:href="#angle-r"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="world-news-swiper swiper">
+                  <div class="swiper-wrapper">@@loop('./elements/_news-item-swiper.html', './data/_world-news.json')</div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+              <div class="department department-swiper-wrapper">
+                <h3 class="department__title">Мiнбер<span class="color--accent">.</span></h3>
+                <div class="department-swiper swiper">
+                  <div class="swiper-btns">
+                    <button class="swiper-btn-prev">
+                      <svg class="icon icon--angle-r">
+                        <use xlink:href="#angle-r"></use>
+                      </svg>
+                    </button>
+                    <button class="swiper-btn-next">
+                      <svg class="icon icon--angle-r">
+                        <use xlink:href="#angle-r"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="swiper-wrapper">@@loop('./elements/_department-swiper-item.html', './data/_department.json')</div>
+                  <div class="swiper-pagination"></div>
                 </div>
               </div>
             </div>

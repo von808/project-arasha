@@ -48,6 +48,16 @@
     align-items: flex-start;
     gap: 20px;
     flex-grow: 1;
+    
+    @include xl {
+      padding: 10px 10px 15px;
+    }
+    @include lg {
+      padding: 15px 20px 20px;
+    }
+    @include esm {
+      padding: 10px 10px 15px;
+    }
   }
   &__info-items {
     display: flex;

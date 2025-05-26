@@ -1,0 +1,19 @@
+@use './../mixins' as *;
+
+.kogam {
+  padding: 50px 0;
+  background-color: var(--accent);
+  @include md {
+    padding: 40px 0;
+  }
+  .title {
+    color: #fff;
+    .accent {
+      color: #000;
+    }
+  }
+  .swiper-btn-prev,
+  .swiper-btn-next {
+    background-color: #000;
+  }
+}
