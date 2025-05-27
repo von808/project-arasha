@@ -52,39 +52,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   if (document.querySelector('.swiper')) {
-    const sayasatSwiper = new Swiper('.sayasat-swiper', {
-      a11y: false,
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      loop: true,
-      speed: 300,
-      autoplay: {
-        delay: 5000,
-      },
-      breakpoints: {
-        768: {
-          spaceBetween: 20,
-          autoplay: {
-            delay: 5000,
+    if (document.querySelector('.sayasat-swiper')) {
+      const sayasatSwiper = new Swiper('.sayasat-swiper', {
+        a11y: false,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        speed: 300,
+        autoplay: {
+          delay: 5000,
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 20,
+            autoplay: {
+              delay: 5000,
+            },
+          },
+          991: {
+            spaceBetween: 20,
+            autoplay: {
+              delay: 0,
+            },
+            speed: 2000,
           },
         },
-        991: {
-          spaceBetween: 20,
-          autoplay: {
-            delay: 0,
-          },
-          speed: 2000,
-        },
-      },
-    });
-    sayasatSwiper.autoplay.start();
-    const sayasatSwiperContainer = document.querySelector('.sayasat-swiper');
-    sayasatSwiperContainer.addEventListener('mouseenter', () => {
-      sayasatSwiper.autoplay.stop();
-    });
-    sayasatSwiperContainer.addEventListener('mouseleave', () => {
+      });
       sayasatSwiper.autoplay.start();
-    });
+      const sayasatSwiperContainer = document.querySelector('.sayasat-swiper');
+      sayasatSwiperContainer.addEventListener('mouseenter', () => {
+        sayasatSwiper.autoplay.stop();
+      });
+      sayasatSwiperContainer.addEventListener('mouseleave', () => {
+        sayasatSwiper.autoplay.start();
+      });
+    }
 
     const swiperFoursWrappers = document.querySelectorAll('.swiper-four-wrapper');
     swiperFoursWrappers.forEach((swiperFoursWrapper) => {
@@ -205,6 +207,22 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       });
     });
+
+    const swiperNewsItemWrappers = document.querySelectorAll('.news__item-swiper--wrapper');
+    swiperNewsItemWrappers.forEach((swiperNewsItemWrapper) => {
+      const swiper = swiperNewsItemWrapper.querySelector('.news__item-swiper');
+      const swiperBtnNext = swiperNewsItemWrapper.querySelector('.swiper-btn-next');
+      const swiperBtnPrev = swiperNewsItemWrapper.querySelector('.swiper-btn-prev');
+
+      const swiperNewsItem = new Swiper(swiper, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: swiperBtnNext,
+          prevEl: swiperBtnPrev,
+        },
+      });
+    });
   }
   if (document.querySelector('.language')) {
     const langBtn = document.querySelector('.language__btn');
@@ -240,5 +258,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+  }
+  if (document.querySelector('.media')) {
+    const medias = document.querySelectorAll('.media');
+    medias.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        el.closest('.video').classList.toggle('video-run');
+        el.paused ? el.play() : el.pause();
+      });
+    });
   }
 });

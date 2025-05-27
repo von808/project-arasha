@@ -50,4 +50,19 @@
     height: 16px;
     fill: var(--accent);
   }
+  &--view {
+    width: 25px;
+    height: 14px;
+    fill: #969696;
+  }
+  &--qq {
+    width: 35px;
+    height: 27px;
+    fill: var(--accent);
+  }
+  &--play {
+    width: 24px;
+    height: 23px;
+    fill: #fff;
+  }
 }

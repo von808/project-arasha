@@ -78,7 +78,6 @@
       }
     }
     .news-item__info {
-
     }
   }
   .news-item:first-child {
@@ -146,8 +145,134 @@
     .news-item__date {
       color: #fff;
       @include sm {
-        color: #858585;
+        color: var(--gray);
       }
+    }
+  }
+}
+
+.hero__sidebar {
+  .sidebar-news {
+    background: #fff;
+    &__header {
+      width: 100%;
+      padding: 30px 20px 20px 20px;
+    }
+    &__title {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    &__list {
+      padding: 0 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    &__item {
+      padding-bottom: 20px;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+
+      position: relative;
+
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 0;
+
+          background-color: #ebebeb;
+        }
+        &::before {
+          content: '';
+          width: 30px;
+          height: 1px;
+
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1;
+
+          background-color: var(--gray);
+        }
+      }
+    }
+    &__item-date {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      color: var(--gray);
+    }
+    &__item-category {
+      width: 30%;
+
+      display: inline-block;
+
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 100%;
+      color: #e41f24;
+      @include md {
+        width: fit-content;
+      }
+    }
+    &__item-tag {
+      width: fit-content;
+      padding: 6px;
+
+      display: inline-block;
+
+      background: #000;
+
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    &__item-title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 128%; //130
+      color: #333;
+
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--accent);
+        // font-weight: 700;
+      }
+    }
+    &__more {
+      width: 100%;
+      height: 40px;
+      padding: 12px 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      background: #000;
+
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
     }
   }
 }

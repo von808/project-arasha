@@ -1,0 +1,11 @@
+@use './../mixins' as *;
+
+.banner {
+  width: 100%;
+  height: auto;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

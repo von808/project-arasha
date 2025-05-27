@@ -23,7 +23,7 @@
     font-size: 14px;
     line-height: 100%;
     text-transform: uppercase;
-    color: #858585;
+    color: var(--gray);
 
     span:nth-child(2) {
       color: #e41f24;
@@ -31,7 +31,7 @@
 
     &.language-active {
       span:nth-child(2) {
-        color: #858585;
+        color: var(--gray);
       }
       span:nth-child(1) {
         color: #e41f24;

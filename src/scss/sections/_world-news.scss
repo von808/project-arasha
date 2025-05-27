@@ -156,7 +156,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 130%;
-    color: #858585;
+    color: var(--gray);
   }
   .swiper-btns {
     width: 100%;
@@ -173,7 +173,7 @@
     z-index: 2;
   }
   .swiper-pagination {
-    --swiper-pagination-bullet-inactive-color: #858585;
+    --swiper-pagination-bullet-inactive-color: var(--gray);
     --swiper-pagination-color: var(--accent);
     margin-top: 25px;
 

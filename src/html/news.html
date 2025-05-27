@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('blocks/head.html', {"title": "News"})
+  <body>
+    @@include('blocks/sprite.html')
+    <div class="wrapper">
+      @@include('./blocks/header.html')
+      <main class="main">
+        <section class="news">
+          <h1 class="visually-hidden"></h1>
+          <div class="container">
+            <div class="news__inner">
+              <div class="news__items">
+                <div class="news__item">
+                  @@include('./blocks/_news-content.html')
+                  <aside class="news__sidebar">
+                    <div class="sidebar-news">@@include('./blocks/_sidebar-news.html')</div>
+                    <div class="news__sidebar-items">@@loop('./elements/_news-item.html', './data/_news-sidebar-news.json')</div>
+                    <a class="banner" href="#!">
+                      <img src="./../images/banner.jpg" alt="banner" />
+                    </a>
+                  </aside>
+                </div>
+                <div class="pluign">
+                  <img src="./../images/news-between.png" alt="" />
+                </div>
+                <div class="news__item">
+                  @@include('./blocks/_news-content.html')
+                  <aside class="news__sidebar">
+                    <div class="sidebar-news">@@include('./blocks/_sidebar-news.html')</div>
+                    <div class="news__sidebar-items">@@loop('./elements/_news-item.html', './data/_news-sidebar-news.json')</div>
+                    <a class="banner" href="#!">
+                      <img src="./../images/banner.jpg" alt="banner" />
+                    </a>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('blocks/footer.html')
+    </div>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./../js/main.js"></script>
+  </body>
+</html>
