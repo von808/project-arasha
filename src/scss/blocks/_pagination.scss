@@ -1,0 +1,57 @@
+@use './../mixins' as *;
+
+.pagination {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  @include sm {
+    justify-content: center;
+    gap: 20px;
+  }
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    @include sm {
+      gap: 10px;
+    }
+  }
+  &__item {
+  }
+  &__link {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gray);
+    &._active {
+      color: var(--accent);
+    }
+    @include sm {
+      font-size: 16px;
+    }
+  }
+  &__prev,
+  &__next {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--accent);
+  }
+  &__prev {
+    transform: scale(-1, 1);
+  }
+  &__next {
+  }
+  .icon {
+    fill: var(--white);
+    margin-left: 2px;
+  }
+}

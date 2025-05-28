@@ -1,8 +1,8 @@
 @use './../mixins' as *;
 
-[js-tab-item] {
+[data-js-tab-item] {
   display: none !important;
-  &[js-tab-active] {
+  &[data-js-tab-active] {
     display: flex !important;
   }
 }

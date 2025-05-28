@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('blocks/head.html', {"title": "news search"})
+  <body>
+    @@include('blocks/sprite.html')
+    <div class="wrapper">
+      @@include('./blocks/header.html')
+      <main class="main">
+        <section class="news-list news-search">
+          <h2 class="visually-hidden"></h2>
+          <div class="container">
+            <div class="news-list__inner">
+              <div class="news-list__content">
+                <div class="news-search__content">
+                  <span class="news-search__result">Результат поиска: <span class="color--accent">12 результатов</span></span>
+                  <form action="#!" class="news-search__form">
+                    <input type="text" placeholder="Астана" />
+                    <button type="submit">поиск</button>
+                  </form>
+                </div>
+                <div class="news-list__items">@@loop('./elements/_news-item--news-main.html', './data/_news-list.json')</div>
+                <div class="pagination">
+                  <button class="pagination__prev">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                  <ul class="pagination__list">
+                    <li class="pagination__item"><a class="pagination__link _active" href="#!">1</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">2</a></li>
+                  </ul>
+                  <button class="pagination__next">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <aside class="news-list__sidebar">
+                <a class="banner" href="#!">
+                  <img src="./../images/banner.jpg" alt="banner" />
+                </a>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('blocks/footer.html')
+    </div>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./../js/main.js"></script>
+  </body>
+</html>

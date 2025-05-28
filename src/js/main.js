@@ -1,3 +1,4 @@
+'use strict';
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.header')) {
     const main = document.querySelector('.main');
@@ -20,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
       navBarFixed(header, navBar);
     });
+  }
+  if (document.querySelector('.language')) {
+    const langBtn = document.querySelector('.language__btn');
+
+    langBtn.onclick = function () {
+      langBtn.classList.toggle('language-active');
+    };
   }
   if (document.querySelector('.burger-btn')) {
     const burgerBtn = document.querySelector('.burger-btn');
@@ -224,19 +232,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  if (document.querySelector('.language')) {
-    const langBtn = document.querySelector('.language__btn');
-
-    langBtn.onclick = function () {
-      langBtn.classList.toggle('language-active');
-    };
-  }
-  if (document.querySelector('[js-tab]')) {
-    const tabs = document.querySelectorAll('[js-tab]');
+  if (document.querySelector('[data-js-tab]')) {
+    const tabs = document.querySelectorAll('[data-js-tab]');
 
     tabs.forEach((tab) => {
-      const tabBtns = tab.querySelectorAll('[js-tab-btn]');
-      const tabItems = tab.querySelectorAll('[js-tab-item]');
+      const tabBtns = tab.querySelectorAll('[data-js-tab-btn]');
+      const tabItems = tab.querySelectorAll('[data-js-tab-item]');
       tabBtns.forEach((btn) => {
         tabClick(btn, tabBtns, tabItems);
       });
@@ -246,15 +247,15 @@ document.addEventListener('DOMContentLoaded', () => {
       item.addEventListener('click', function (e) {
         e.preventDefault();
         let currentBtn = item;
-        let tabId = currentBtn.getAttribute('js-tab-data');
-        let currentTabs = document.querySelectorAll(`[js-tab-data="${tabId}"]`);
+        let tabId = currentBtn.getAttribute('data-js-tab-data');
+        let currentTabs = document.querySelectorAll(`[data-js-tab-data="${tabId}"]`);
 
-        if (!currentBtn.hasAttribute('js-tab-active')) {
-          btns.forEach((item) => item.removeAttribute('js-tab-active'));
-          currentBtn.setAttribute('js-tab-active', '');
-          items.forEach((item) => item.removeAttribute('js-tab-active'));
+        if (!currentBtn.hasAttribute('data-js-tab-active')) {
+          btns.forEach((item) => item.removeAttribute('data-js-tab-active'));
+          currentBtn.setAttribute('data-js-tab-active', '');
+          items.forEach((item) => item.removeAttribute('data-js-tab-active'));
 
-          currentTabs.forEach((item) => item.setAttribute('js-tab-active', ''));
+          currentTabs.forEach((item) => item.setAttribute('data-js-tab-active', ''));
         }
       });
     }

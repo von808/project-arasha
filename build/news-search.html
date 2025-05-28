@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>news search</title>
+  <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+  <body>
+    <svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 10 16" id="angle-r" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 14.1133L6.11333 8L0 1.88667L1.88667 0L9.88667 8L1.88667 16L0 14.1133Z"/>
+</symbol><symbol viewBox="0 0 25 15" id="burger" xmlns="http://www.w3.org/2000/svg">
+    <rect width="25" height="3"/>
+    <rect y="6" width="25" height="3"/>
+    <rect y="12" width="25" height="3"/>
+</symbol><symbol viewBox="0 0 20 20" id="close" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.7988 2.12109L12.0205 9.89941L19.7988 17.6777L17.6777 19.7988L9.89941 12.0205L2.12109 19.7988L0 17.6777L7.77832 9.89941L0 2.12109L2.12109 0L9.89941 7.77832L17.6777 0L19.7988 2.12109Z"/>
+</symbol><symbol viewBox="0 0 10 19" id="fb" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.62343 0.00384845L7.22488 0C4.5302 0 2.78878 1.78664 2.78878 4.55194V6.65069H0.377148C0.168755 6.65069 0 6.81964 0 7.02804V10.0689C0 10.2773 0.168947 10.446 0.377148 10.446H2.78878V18.1191C2.78878 18.3275 2.95753 18.4962 3.16593 18.4962H6.31242C6.52081 18.4962 6.68957 18.3273 6.68957 18.1191V10.446H9.50932C9.71772 10.446 9.88647 10.2773 9.88647 10.0689L9.88763 7.02804C9.88763 6.92798 9.84779 6.83215 9.77718 6.76134C9.70656 6.69053 9.61034 6.65069 9.51029 6.65069H6.68957V4.87156C6.68957 4.01643 6.89334 3.58233 8.00727 3.58233L9.62304 3.58175C9.83125 3.58175 10 3.4128 10 3.2046V0.380996C10 0.172988 9.83144 0.00423329 9.62343 0.00384845Z"/>
+</symbol><symbol viewBox="0 0 20 20" id="inst" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.8 0H14.2C17.4 0 20 2.6 20 5.8V14.2C20 15.7383 19.3889 17.2135 18.3012 18.3012C17.2135 19.3889 15.7383 20 14.2 20H5.8C2.6 20 0 17.4 0 14.2V5.8C0 4.26174 0.61107 2.78649 1.69878 1.69878C2.78649 0.61107 4.26174 0 5.8 0ZM5.6 2C4.64522 2 3.72955 2.37928 3.05442 3.05442C2.37928 3.72955 2 4.64522 2 5.6V14.4C2 16.39 3.61 18 5.6 18H14.4C15.3548 18 16.2705 17.6207 16.9456 16.9456C17.6207 16.2705 18 15.3548 18 14.4V5.6C18 3.61 16.39 2 14.4 2H5.6ZM15.25 3.5C15.5815 3.5 15.8995 3.6317 16.1339 3.86612C16.3683 4.10054 16.5 4.41848 16.5 4.75C16.5 5.08152 16.3683 5.39946 16.1339 5.63388C15.8995 5.8683 15.5815 6 15.25 6C14.9185 6 14.6005 5.8683 14.3661 5.63388C14.1317 5.39946 14 5.08152 14 4.75C14 4.41848 14.1317 4.10054 14.3661 3.86612C14.6005 3.6317 14.9185 3.5 15.25 3.5ZM10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5ZM10 7C9.20435 7 8.44129 7.31607 7.87868 7.87868C7.31607 8.44129 7 9.20435 7 10C7 10.7956 7.31607 11.5587 7.87868 12.1213C8.44129 12.6839 9.20435 13 10 13C10.7956 13 11.5587 12.6839 12.1213 12.1213C12.6839 11.5587 13 10.7956 13 10C13 9.20435 12.6839 8.44129 12.1213 7.87868C11.5587 7.31607 10.7956 7 10 7Z"/>
+</symbol><symbol viewBox="0 0 24 23" id="play" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.00002 5.26252V17.1639L16.06 11.2132L4.00002 5.26252ZM1.50402 0.116964L22.52 10.4859C22.6706 10.5605 22.7955 10.6671 22.8823 10.7951C22.9691 10.9231 23.0148 11.0682 23.0148 11.2158C23.0148 11.3634 22.9691 11.5084 22.8823 11.6364C22.7955 11.7645 22.6706 11.8711 22.52 11.9457L1.50402 22.3146C1.35161 22.3898 1.17837 22.4296 1.00191 22.4299C0.825444 22.4301 0.652032 22.3909 0.499282 22.3162C0.346531 22.2415 0.219882 22.1339 0.132195 22.0044C0.0445086 21.8749 -0.00109324 21.728 1.9901e-05 21.5788V0.846002C-3.2247e-05 0.697189 0.046343 0.550999 0.134462 0.422192C0.222581 0.293386 0.349325 0.186523 0.501896 0.112396C0.654466 0.0382683 0.827462 -0.0005003 1.00341 4.87455e-06C1.17937 0.000510049 1.35205 0.0419623 1.50402 0.116964Z"/>
+</symbol><symbol viewBox="0 0 35 27" id="qq" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5902 2.71659L11.8355 0C4.82055 3.06011 0 9.25139 0 16.1613C0 20.0901 1.08737 22.5145 3.10902 24.6743C4.38089 26.0326 6.39468 27 8.50269 27C12.2948 27 15.3724 23.9044 15.3724 20.0901C15.3724 16.4574 12.5813 13.5316 9.03656 13.1999C8.40848 13.1407 7.76469 13.1525 7.15624 13.2394V12.8761C7.17979 11.2099 7.51739 6.42819 12.864 3.13907L13.5902 2.71659ZM31.4631 0C24.4482 3.06011 19.6276 9.25139 19.6276 16.1613C19.6276 20.0901 20.715 22.5145 22.7367 24.6743C24.0085 26.0326 26.0223 27 28.1303 27C31.9224 27 35 23.9044 35 20.0901C35 16.4574 32.209 13.5316 28.6642 13.1999C28.0361 13.1407 27.3923 13.1525 26.7839 13.2394C26.7839 12.0035 26.67 6.2821 33.2178 2.71659L31.4631 0Z"/>
+</symbol><symbol viewBox="0 0 24 24" id="search" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.75 20.0625L15.9338 14.2453C16.8711 12.9572 17.3753 11.4049 17.3738 9.81188C17.3738 5.64234 13.9814 2.25 9.81188 2.25C5.64234 2.25 2.25 5.64234 2.25 9.81188C2.25 13.9814 5.64234 17.3738 9.81188 17.3738C11.4049 17.3753 12.9572 16.8711 14.2453 15.9338L20.0625 21.75L21.75 20.0625ZM9.81188 14.9855C8.7885 14.9856 7.78809 14.6822 6.93714 14.1137C6.0862 13.5452 5.42296 12.7371 5.03129 11.7917C4.63961 10.8462 4.53711 9.80583 4.73674 8.80211C4.93637 7.7984 5.42916 6.87643 6.15279 6.15279C6.87643 5.42916 7.7984 4.93637 8.80211 4.73674C9.80583 4.53711 10.8462 4.63961 11.7917 5.03129C12.7371 5.42296 13.5452 6.0862 14.1137 6.93714C14.6822 7.78809 14.9856 8.7885 14.9855 9.81188C14.9839 11.1835 14.4383 12.4985 13.4684 13.4684C12.4985 14.4383 11.1835 14.9839 9.81188 14.9855Z"/>
+</symbol><symbol viewBox="0 0 17 14" id="tm" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.57719 9.03857L6.29991 12.8675C6.69662 12.8675 6.86843 12.7002 7.07447 12.4993L8.93437 10.7542L12.7883 13.5251C13.4951 13.9119 13.9931 13.7082 14.1837 12.8867L16.7134 1.24895L16.7141 1.24826C16.9383 0.222447 16.3363 -0.178691 15.6476 0.0729629L0.778169 5.66215C-0.236642 6.04889 -0.221276 6.60431 0.605658 6.85596L4.40718 8.01686L13.2374 2.59225C13.6529 2.32208 14.0308 2.47156 13.72 2.74173L6.57719 9.03857Z"/>
+</symbol><symbol viewBox="0 0 18 20" id="tt" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 8.20169C16.2306 8.2058 14.5046 7.66934 13.0658 6.6681V13.6511C13.0654 14.9444 12.6587 16.2068 11.9004 17.2694C11.142 18.332 10.068 19.1442 8.82199 19.5974C7.576 20.0505 6.21739 20.1231 4.92784 19.8053C3.63828 19.4876 2.47925 18.7946 1.60571 17.8192C0.732175 16.8437 0.185777 15.6323 0.0395762 14.3468C-0.106624 13.0613 0.154342 11.763 0.787581 10.6256C1.42082 9.48819 2.39615 8.56583 3.58315 7.98185C4.77015 7.39788 6.11224 7.18013 7.42997 7.35772V10.8699C6.82698 10.6855 6.17947 10.6911 5.57991 10.8858C4.98036 11.0805 4.45942 11.4544 4.09148 11.9541C3.72355 12.4539 3.52745 13.0538 3.53117 13.6684C3.53489 14.2829 3.73826 14.8806 4.11222 15.376C4.48618 15.8715 5.01161 16.2394 5.61348 16.4272C6.21536 16.6151 6.86289 16.6132 7.46361 16.4219C8.06433 16.2306 8.58752 15.8597 8.95846 15.3621C9.3294 14.8645 9.52912 14.2657 9.52911 13.6511V0H13.0658C13.0634 0.290363 13.0884 0.580329 13.1406 0.866235C13.2635 1.50447 13.519 2.11163 13.8916 2.65057C14.2641 3.1895 14.7458 3.64889 15.3073 4.00062C16.106 4.51407 17.0424 4.78774 18 4.78754V8.20169Z"/>
+</symbol><symbol viewBox="0 0 25 14" id="view" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.012 0C4.075 0 0 6.76602 0 6.76602C0 6.76602 3.075 13.532 12.012 13.532C20.105 13.532 24.023 6.79224 24.023 6.79224C24.023 6.79224 20.074 0 12.012 0ZM12.03 10.9948C9.128 10.9948 7.03 9.14427 7.03 6.76602C7.03 4.38692 9.128 2.53726 12.03 2.53726C14.932 2.53726 17.03 4.38692 17.03 6.76602C17.03 9.14427 14.932 10.9948 12.03 10.9948ZM12.03 4.22876C10.372 4.2313 9.03 5.40689 9.03 6.76602C9.03 8.1243 10.372 9.30328 12.03 9.30328C13.688 9.30328 15.03 8.12345 15.03 6.76602C15.03 5.40605 13.688 4.22622 12.03 4.22876Z"/>
+</symbol><symbol viewBox="0 0 18 18" id="x" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.7145 7.62258L17.4161 0H15.8282L10.0066 6.61719L5.36025 0H0L7.02776 10.0073L0 18H1.58786L7.73189 11.0104L12.6398 18H18L10.7145 7.62258ZM8.53897 10.0951L7.82583 9.09799L2.16048 1.17132H4.59976L9.17321 7.57077L9.88335 8.56789L15.8275 16.8857H13.3882L8.53897 10.0951Z"/>
+</symbol></svg>
+    <div class="wrapper">
+      <header class="header" id="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="language">
+        <button class="language__btn">
+          <span>рус</span>
+          <span>қаз</span>
+        </button>
+      </div>
+
+      <a href="./" class="logo">
+        <img src="./images/logo.svg" width="185" height="60" alt="logo" />
+      </a>
+
+      <div class="socials">
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--x"><use xlink:href="#x"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--tt"><use xlink:href="#tt"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--fb"><use xlink:href="#fb"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--inst"><use xlink:href="#inst"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--tm"><use xlink:href="#tm"></use></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="nav-bar-wrapper">
+  <div class="container">
+    <div class="nav-bar">
+      <div class="nav-bar__left">
+        <a href="#!" class="nav__link nav__link--color">Басты бет </a>
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="./all-news.html" class="nav__link">Жаңалықтар</a></li>
+            <li class="nav__item"><a href="#!" class="nav__link">Саясат</a></li>
+            <li class="nav__item"><a href="#!" class="nav__link">Қоғам</a></li>
+            <li class="nav__item"><a href="#!" class="nav__link">Мәдениет</a></li>
+            <li class="nav__item"><a href="#!" class="nav__link">Әлем</a></li>
+            <li class="nav__item"><a href="#!" class="nav__link">Аймақтар</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav-bar__right">
+        <form class="search" action="#!">
+          <button class="search__btn">
+            <svg class="icon icon--search">
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+          <input class="search__input" type="text" placeholder="Іздеу" />
+        </form>
+        <button class="burger-btn">
+          <svg class="icon icon--burger">
+            <use xlink:href="#burger"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="burger-overlay">
+  <div class="burger-menu">
+    <div class="burger-menu__header">
+      <div class="burger-menu__header-title"><span>РУБРИКАЛАР</span></div>
+      <button class="burger-menu__close">
+        <svg class="icon icon--close">
+          <use xlink:href="#close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="burger-menu__content">
+      <ul class="burger-menu__list">
+        <li class="burger-menu__item"><a href="/all-news.html" class="burger-menu__link">ЖАҢАЛЫҚТАР</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">САЯСАТ</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">ҚОҒАМ</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">МӘДЕНИЕТ</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">ӘЛЕМ</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">АЙМАҚТАР</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">ОҚИҒА</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">САРАПТАМА</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">МІНБЕР</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">ӘДЕБИЕТ</a></li>
+        <li class="burger-menu__item"><a href="#!" class="burger-menu__link">ӘЛЕМ ЖӘНЕ ЗАҢ</a></li>
+      </ul>
+      <div class="burger-menu__footer">
+        <a href="#!">САЙТ ТУРАЛЫ</a>
+        <a href="#!">ЖАРНАМА</a>
+        <a href="#!">САЙТ МАТЕРИАЛЫН ПАЙДАЛАНУ</a>
+        <div class="socials">
+          <a class="socials__link" href="#!">
+            <svg class="icon icon--x"><use xlink:href="#x"></use></svg>
+          </a>
+          <a class="socials__link" href="#!">
+            <svg class="icon icon--tt"><use xlink:href="#tt"></use></svg>
+          </a>
+          <a class="socials__link" href="#!">
+            <svg class="icon icon--fb"><use xlink:href="#fb"></use></svg>
+          </a>
+          <a class="socials__link" href="#!">
+            <svg class="icon icon--inst"><use xlink:href="#inst"></use></svg>
+          </a>
+          <a class="socials__link" href="#!">
+            <svg class="icon icon--tm"><use xlink:href="#tm"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <main class="main">
+        <section class="news-list news-search">
+          <h2 class="visually-hidden"></h2>
+          <div class="container">
+            <div class="news-list__inner">
+              <div class="news-list__content">
+                <div class="news-search__content">
+                  <span class="news-search__result">Результат поиска: <span class="color--accent">12 результатов</span></span>
+                  <form action="#!" class="news-search__form">
+                    <input type="text" placeholder="Астана" />
+                    <button type="submit">поиск</button>
+                  </form>
+                </div>
+                <div class="news-list__items"><a class="news-item" href="#!">
+  <div class="news-item__image-box">
+    <img class="news-item__image" src="./images/news/news-list/1.jpg" width="420" height="263" alt="" />
+  </div>
+  <div class="news-item__info">
+    <div class="news-item__info-items">
+      <data class="news-item__date" value="13.11.2023 / 23:03">13.11.2023 / 23:03</data>
+    </div>
+    <span class="news-item__title" title="Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды">Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды</span>
+    
+    <div class="news-item__descr">
+      <p>Биыл еліміз үшін өзгерістерге толы жыл болды. Мемлекет басшысының бастамасымен саяси-экономикалық реформалар жүзеге асырылып жатыр.</p>
+    </div>
+    
+  </div>
+</a>
+<a class="news-item" href="#!">
+  <div class="news-item__image-box">
+    <img class="news-item__image" src="./images/news/news-list/2.jpg" width="420" height="263" alt="" />
+  </div>
+  <div class="news-item__info">
+    <div class="news-item__info-items">
+      <data class="news-item__date" value="13.11.2023 / 23:03">13.11.2023 / 23:03</data>
+    </div>
+    <span class="news-item__title" title="Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды">Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды</span>
+    
+    <div class="news-item__descr">
+      <p>Биыл еліміз үшін өзгерістерге толы жыл болды. Мемлекет басшысының бастамасымен саяси-экономикалық реформалар жүзеге асырылып жатыр.</p>
+    </div>
+    
+  </div>
+</a>
+<a class="news-item" href="#!">
+  <div class="news-item__image-box">
+    <img class="news-item__image" src="./images/news/news-list/3.jpg" width="420" height="263" alt="" />
+  </div>
+  <div class="news-item__info">
+    <div class="news-item__info-items">
+      <data class="news-item__date" value="13.11.2023 / 23:03">13.11.2023 / 23:03</data>
+    </div>
+    <span class="news-item__title" title="Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды">Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды</span>
+    
+    <div class="news-item__descr">
+      <p>Биыл еліміз үшін өзгерістерге толы жыл болды. Мемлекет басшысының бастамасымен саяси-экономикалық реформалар жүзеге асырылып жатыр.</p>
+    </div>
+    
+  </div>
+</a>
+<a class="news-item" href="#!">
+  <div class="news-item__image-box">
+    <img class="news-item__image" src="./images/news/news-list/1.jpg" width="420" height="263" alt="" />
+  </div>
+  <div class="news-item__info">
+    <div class="news-item__info-items">
+      <data class="news-item__date" value="13.11.2023 / 23:03">13.11.2023 / 23:03</data>
+    </div>
+    <span class="news-item__title" title="Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды">Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды</span>
+    
+    <div class="news-item__descr">
+      <p>Биыл еліміз үшін өзгерістерге толы жыл болды. Мемлекет басшысының бастамасымен саяси-экономикалық реформалар жүзеге асырылып жатыр.</p>
+    </div>
+    
+  </div>
+</a>
+<a class="news-item" href="#!">
+  <div class="news-item__image-box">
+    <img class="news-item__image" src="./images/news/news-list/2.jpg" width="420" height="263" alt="" />
+  </div>
+  <div class="news-item__info">
+    <div class="news-item__info-items">
+      <data class="news-item__date" value="13.11.2023 / 23:03">13.11.2023 / 23:03</data>
+    </div>
+    <span class="news-item__title" title="Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды">Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды</span>
+    
+    <div class="news-item__descr">
+      <p>Биыл еліміз үшін өзгерістерге толы жыл болды. Мемлекет басшысының бастамасымен саяси-экономикалық реформалар жүзеге асырылып жатыр.</p>
+    </div>
+    
+  </div>
+</a>
+<a class="news-item" href="#!">
+  <div class="news-item__image-box">
+    <img class="news-item__image" src="./images/news/news-list/3.jpg" width="420" height="263" alt="" />
+  </div>
+  <div class="news-item__info">
+    <div class="news-item__info-items">
+      <data class="news-item__date" value="13.11.2023 / 23:03">13.11.2023 / 23:03</data>
+    </div>
+    <span class="news-item__title" title="Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды">Ақмола облысында 200-ге жуық бала Президент шыршасының қонақтары болды</span>
+    
+    <div class="news-item__descr">
+      <p>Биыл еліміз үшін өзгерістерге толы жыл болды. Мемлекет басшысының бастамасымен саяси-экономикалық реформалар жүзеге асырылып жатыр.</p>
+    </div>
+    
+  </div>
+</a>
+</div>
+                <div class="pagination">
+                  <button class="pagination__prev">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                  <ul class="pagination__list">
+                    <li class="pagination__item"><a class="pagination__link _active" href="#!">1</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">2</a></li>
+                  </ul>
+                  <button class="pagination__next">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <aside class="news-list__sidebar">
+                <a class="banner" href="#!">
+                  <img src="./images/banner.jpg" alt="banner" />
+                </a>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="./" class="logo">
+        <img src="./images/logo-white.svg" width="185" height="60" alt="logo" />
+      </a>
+      <div class="footer__info">
+        <p>
+          Сайт материалдарын қолдану үшін сілтеме көрсетуіңіз міндетті.Авторлық құқықтар және жанама құқықтар толық сақталады.
+          <a href="tel:+77478446070">тел.: +7 (747) 8446070</a>
+        </p>
+        <p>
+          Бізбен хабарласыңыз: 
+          <a href="mailto:arasha.abai@gmail.com">arasha.abai@gmail.com</a>
+        </p>
+      </div>
+      <div class="footer__links">
+        <a class="footer__link" href="#!">Жарнама</a>
+        <a class="footer__link" href="#!">Сайт туралы</a>
+      </div>
+      <div class="socials">
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--x"><use xlink:href="#x"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--tt"><use xlink:href="#tt"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--fb"><use xlink:href="#fb"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--inst"><use xlink:href="#inst"></use></svg>
+        </a>
+        <a class="socials__link" href="#!">
+          <svg class="icon icon--tm"><use xlink:href="#tm"></use></svg>
+        </a>
+      </div>
+      <div class="stat">
+        <img src="./images/stat.jpg" alt="stat" />
+      </div>
+      <a class="studio" href="#!">
+        <img src="./images/studio-logo.png" alt="studio-logo" />
+        <span>Студия Team28</span>
+      </a>
+      <a class="copyright" href="#!">© 2011-2025 Arasha.kz</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

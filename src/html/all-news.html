@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  @@include('blocks/head.html', {"title": "All news"})
+  @@include('blocks/head.html', {"title": "all news"})
   <body>
     @@include('blocks/sprite.html')
     <div class="wrapper">
@@ -10,9 +10,46 @@
           <h2 class="visually-hidden"></h2>
           <div class="container">
             <div class="news-main__inner">
-              <div class="news-main__items">
-                @@loop('./elements/_news-item--news-main.html', './data/_news-main.json')
+              <h1 class="news-main__title">Жаңалықтар</h1>
+              <div class="news-main__items">@@loop('./elements/_news-item--news-main.html', './data/_news-main.json')</div>
+            </div>
+          </div>
+        </section>
+        <section class="news-list">
+          <h2 class="visually-hidden"></h2>
+          <div class="container">
+            <div class="news-list__inner">
+              <div class="news-list__content">
+                <div class="news-list__items">
+                  @@loop('./elements/_news-item--news-main.html', './data/_news-list.json')
+                </div>
+                <div class="pagination">
+                  <button class="pagination__prev">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                  <ul class="pagination__list">
+                    <li class="pagination__item"><a class="pagination__link _active" href="#!">1</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">2</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">3</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">4</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">5</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">...</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#!">23</a></li>
+                  </ul>
+                  <button class="pagination__next">
+                    <svg class="icon icon--angle-r">
+                      <use xlink:href="#angle-r"></use>
+                    </svg>
+                  </button>
+                </div>
               </div>
+              <aside class="news-list__sidebar">
+                <a class="banner" href="#!">
+                  <img src="./../images/banner.jpg" alt="banner" />
+                </a>
+              </aside>
             </div>
           </div>
         </section>

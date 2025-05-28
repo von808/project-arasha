@@ -4,8 +4,26 @@
   padding-top: 30px;
   @include md {
     padding-top: 20px;
+    margin-bottom: 20px;
   }
   &__inner {
+  }
+  &__title {
+    margin-bottom: 30px;
+    display: inline-block;
+
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    color: #000;
+    @include md {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+    @include sm {
+      font-size: 24px;
+    }
   }
   &__items {
     display: grid;
