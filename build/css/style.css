@@ -9,18 +9,18 @@
 }
 
 @font-face {
-  font-family: Merriweather;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Merriweather-Regular.woff2") format("woff2"), url("../fonts/Merriweather-Regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: Merriweather;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Merriweather-Regular.woff2") format("woff2"), url("../fonts/Merriweather-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -43,8 +43,8 @@
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -918,6 +918,10 @@ a {
   gap: 20px;
 }
 
+.header__nav {
+  height: 100%;
+}
+
 .language {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1035,9 +1039,14 @@ a {
 }
 
 .nav__list {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.nav__item {
+  height: 100%;
 }
 
 .nav__link {
@@ -1055,6 +1064,7 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: transparent;
   font-weight: 600;
   font-size: 14px;
   line-height: 100%;
@@ -1062,6 +1072,12 @@ a {
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+}
+
+.nav__link:hover {
+  background-color: var(--accent);
 }
 
 .nav__link--color {
